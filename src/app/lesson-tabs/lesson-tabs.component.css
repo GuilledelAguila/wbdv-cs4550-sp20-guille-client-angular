@@ -1,0 +1,9 @@
+.active a {
+  border: lightgray;
+  border-style: solid;
+  border-width: 2px;
+  border-bottom-style: hidden;
+  color: grey;
+  box-shadow: 0px -2px 0px 0px white inset;
+
+}

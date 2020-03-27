@@ -1,0 +1,12 @@
+<h1>Course List</h1>
+
+<!--<input [(ngModel)]="newCourseTitle"/>-->
+<!--<button (click)="createCourse(newCourseTitle)">-->
+<!--  Create Course-->
+<!--</button>-->
+
+<ul class="list-group">
+    <a *ngFor="let course of courses" href="course/{{course._id}}" class="list-group-item list-group-item-action">
+      {{course.title}}
+    </a>
+</ul>
