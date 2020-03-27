@@ -6,7 +6,10 @@
 <!--</button>-->
 
 <ul class="list-group">
-    <a *ngFor="let course of courses" href="course/{{course._id}}" class="list-group-item list-group-item-action">
+  <li class="list-group-item active h5">
+    Courses
+  </li>
+    <a *ngFor="let course of courses" href="course/{{course._id}}/modules" class="list-group-item list-group-item-action">
       {{course.title}}
     </a>
 </ul>
