@@ -4,7 +4,7 @@
     <a [class]="{'active': moduleId === module._id} "
        class="list-group-item list-group-item-active"
        *ngFor="let module of modules"
-       routerLink="/course/{{courseId}}/module/{{module._id}}/lessons">
+       routerLink="/courses/{{courseId}}/modules/{{module._id}}/lessons">
       {{module.title}}
     </a>
 </ul>

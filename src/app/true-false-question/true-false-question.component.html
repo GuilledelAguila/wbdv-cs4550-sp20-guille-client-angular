@@ -1,0 +1,42 @@
+
+<h5>{{question.question}}</h5>
+
+<ul class="list-group">
+  <li class="list-group-item label"
+      [ngClass]="{'bg-danger': grading && answer !== question.correct && question.correct != 'true',
+              'bg-success': grading  && question.correct === 'true'}">
+    <label>
+      <input type="radio"
+             value="true"
+             [(ngModel)]="answer"
+             name="{{question._id}}"/>
+      True
+    </label>
+    <i [ngClass]="{'fa fa-check':grading  && question.correct === 'true'}" class="float-right"></i>
+    <i [ngClass]="{'fa fa-times': grading && answer !== question.correct && question.correct != 'true'}" class="float-right"></i>
+  </li>
+  <li class="list-group-item"
+      [ngClass]="{'bg-danger': grading && answer !== question.correct && question.correct != 'false',
+              'bg-success': grading  && question.correct === 'false'}">
+    <label>
+      <input type="radio"
+             value="false"
+             [(ngModel)]="answer"
+             name="{{question._id}}"/>
+      False
+    </label>
+    <i [ngClass]="{'fa fa-check':grading  && question.correct === 'false'}" class="float-right"></i>
+    <i [ngClass]="{'fa fa-times': grading && answer !== question.correct && question.correct != 'false'}" class="float-right"></i>
+  </li>
+</ul>
+
+<br/>
+Your answer: {{answer}}
+<br/>
+<br/>
+
+<button class="btn btn-success" (click)="grade()">Grade</button>
+<!--Correct answer: {{question.correct}}-->
+<!--<br/>-->
+<!--<span [hidden]="answer !== question.correct">Yay!</span>-->
+<!--<span [hidden]="answer === question.correct">Oops</span>-->
