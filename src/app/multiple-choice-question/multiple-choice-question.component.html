@@ -1,7 +1,6 @@
 
 <h5>{{question.question}}</h5>
 
-
 <ul  class="list-group">
   <li *ngFor="let choice of question.choices" class="list-group-item"
     [ngClass]="{'bg-danger': grading && answer === choice && answer !== question.correct,
@@ -10,7 +9,9 @@
       <input type="radio"
              value="{{choice}}"
              [(ngModel)]="answer"
-             name="{{question._id}}"/>
+             name="{{question._id}}"
+             (ngModelChange)="submitAnswer()"
+      />
       {{choice}}
     </label>
     <i [ngClass]="{'fa fa-check': grading && question.correct === choice}" class="float-right"></i>
@@ -22,10 +23,10 @@
 <br/>
 Your answer: {{answer}}
 <br/>
-<br/>
+<!--<br/>-->
 
-<button (click)="grade()" class="btn btn-success">Grade</button>
+<!--<button (click)="grade()" class="btn btn-success">Grade</button>-->
 
-<br/>
+<!--<br/>-->
 <!--<span [hidden]="answer !== question.correct">Yay!</span>-->
 <!--<span [hidden]="answer === question.correct">Oops</span>-->

@@ -14,12 +14,26 @@ export class QuizComponent implements OnInit {
 
   questions = []
   quizId = ''
+  courseId =''
+  submitQuiz = () => {
+    fetch(`http://localhost:3000/api/quizzes/${this.quizId}/attempts`, {
+      method: 'POST',
+      body: JSON.stringify(this.questions),
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then(response => response.json())
+
+  }
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.quizId = params.qid;
+      this.courseId = params.cid;
       this.service.findQuestionsForQuiz(this.quizId)
         .then(questions => this.questions = questions);
     });
+
   }
 
 }

@@ -9,6 +9,7 @@
       <input type="radio"
              value="true"
              [(ngModel)]="answer"
+             (ngModelChange)="submitAnswer()"
              name="{{question._id}}"/>
       True
     </label>
@@ -22,6 +23,7 @@
       <input type="radio"
              value="false"
              [(ngModel)]="answer"
+             (ngModelChange)="submitAnswer()"
              name="{{question._id}}"/>
       False
     </label>
@@ -33,9 +35,9 @@
 <br/>
 Your answer: {{answer}}
 <br/>
-<br/>
+<!--<br/>-->
 
-<button class="btn btn-success" (click)="grade()">Grade</button>
+<!--<button class="btn btn-success" (click)="grade()">Grade</button>-->
 <!--Correct answer: {{question.correct}}-->
 <!--<br/>-->
 <!--<span [hidden]="answer !== question.correct">Yay!</span>-->
